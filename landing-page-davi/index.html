@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quilombo Pacoval | Memória, Cultura e Resistência</title>
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <!-- Linkando o meu CSS pra cuidar do visual -->
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO (Logo, menu de navegação e botão de tema) -->
+    <header>
+        <nav>
+            <div class="logo">
+                Quilombo Pacoval
+            </div>
+
+            <ul class="menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#historia">História</a></li>
+                <li><a href="#cultura">Cultura</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+            </ul>
+
+            <!-- Botãozinho pra alternar entre o modo claro e escuro (controlado lá no JS) -->
+            <button id="botaoModo" title="Mudar aparência">
+                <img src="imagens/dia-e-noite.png" alt="Ícone Dia e Noite">
+            </button>
+        </nav>
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL DA PÁGINA -->
+    <main>
+
+        <!-- SEÇÃO HERO (A primeira coisa que o usuário vê) -->
+        <section id="inicio" class="inicio">
+
+            <div class="inicio-texto">
+                <p class="pequeno-titulo">
+                    Alenquer, Pará
+                </p>
+
+                <h1>
+                    Quilombo Pacoval
+                </h1>
+
+                <p>
+                    Um espaço de memória, cultura e identidade,
+                    onde a história da comunidade permanece viva
+                    através de suas pessoas, tradições e território.
+                </p>
+
+                <!-- Esse botão vai dar um scroll suave até a seção 'Sobre' usando JS -->
+                <button id="botaoConhecer">
+                    Conheça o Pacoval
+                </button>
+            </div>
+
+            <div class="inicio-imagem">
+                <img src="imagens/pacoval-01.jpg" alt="Imagem do Quilombo Pacoval">
+            </div>
+
+        </section>
+
+
+        <!-- SEÇÃO SOBRE -->
+        <section id="sobre" class="secao">
+
+            <div class="titulo-secao">
+                <p>CONHEÇA</p>
+                <h2>Sobre o Quilombo Pacoval</h2>
+            </div>
+
+            <div class="sobre-conteudo">
+
+                <div class="sobre-imagem">
+                    <img src="imagens/pacoval-02.jpg" alt="Paisagem relacionada ao Quilombo Pacoval">
+                </div>
+
+                <div class="sobre-texto">
+                    <h3>Um território de história e identidade</h3>
+                    <p>
+                        O Quilombo Pacoval representa um espaço
+                        marcado pela história, pela memória e pela
+                        identidade de sua comunidade.
+                    </p>
+                    <p>
+                        Conhecer o Pacoval também significa conhecer
+                        as pessoas, os saberes, as tradições e a
+                        relação construída com o território ao longo
+                        do tempo. .
+                    </p>
+
+                    <!-- Botão pra revelar o restante do texto pelo JS -->
+                    <button id="botaoMais">
+                        Saiba mais
+                    </button>
+
+                    <!-- Essa tag fica oculta por padrão e o JS tira a classe dela no clique -->
+                    <p id="textoMais" class="oculto">
+    Além disso, a comunidade preserva saberes ancestrais, valorizando a agricultura familiar, o artesanato e práticas festivas únicas. Essa união fortalece a resistência diária e garante que as futuras gerações conheçam e tenham orgulho da própria história.
+</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SEÇÃO HISTÓRIA -->
+        <section id="historia" class="secao historia">
+
+            <div class="titulo-secao">
+                <p>MEMÓRIA</p>
+                <h2>História</h2>
+            </div>
+
+            <div class="historia-conteudo">
+
+                <div class="historia-texto">
+                    <h3>
+                        Uma história que continua viva
+                    </h3>
+                    <p>
+                        A comunidade Pacoval é uma das mais antigas do município de <strong>Alenquer</strong>.
+                        Sua formação teve a participação de negros fugidos da Fazenda de Maria
+                        Macambira, localizada no município de Santarém.
+                    </p>
+
+                    <!-- Caixinha pra dar um destaque visual nessa curiosidade do nome -->
+                    <div class="destaque-historia">
+                        <strong>Origem do Nome:</strong> O nome Pacoval vem de um pé de bananeira que existia na frente da
+                        comunidade, conhecido como <em>banana Pacová</em>. A partir dessa referência,
+                        surgiu o nome Pacoval.
+                    </div>
+
+                    <p>
+                        O Quilombo Pacoval foi titulado em <strong>20 de novembro de 1996</strong> pelo então
+                        presidente Fernando Henrique Cardoso. Atualmente, a comunidade possui
+                        mais de 500 famílias e vem passando por importantes avanços relacionados às políticas públicas e à infraestrutura:
+                    </p>
+
+                    <!-- Usei uma lista aqui pra quebrar o bloco de texto e melhorar a leitura -->
+                    <ul class="lista-desafios">
+                        <li>Presença de uma Unidade Básica de Saúde (UBS) na comunidade.</li>
+                        <li>Nova escola recentemente inaugurada para atender aos estudantes.</li>
+                        <li>Melhoria nas condições da estrada de acesso à comunidade.</li>
+                    </ul>
+
+                    <p>
+                        Hoje, o Quilombo Pacoval possui mais de 400 alunos (da Educação Infantil ao Ensino Médio) e abriga o <strong>Marambiré</strong>, importante manifestação cultural e patrimônio do estado do Pará.
+                    </p>
+
+                    <p class="conclusao-historia">
+                        Mesmo diante das dificuldades, o Pacoval continua sendo uma comunidade
+                        marcada por sua beleza, acolhimento, cultura, memória e identidade.
+                    </p>
+                </div>
+
+                <div class="historia-imagem">
+                    <img src="imagens/pacoval-03.jpg" alt="Imagem relacionada à história do Pacoval">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SEÇÃO CULTURA (Cards informativos) -->
+        <section id="cultura" class="secao">
+
+            <div class="titulo-secao">
+                <p>IDENTIDADE</p>
+                <h2>Cultura e comunidade</h2>
+            </div>
+
+           <div class="cards-cultura">
+
+                <!-- Card Território -->
+                <article class="card">
+                    <div class="icone">
+                        <img src="imagens/icone-territorio.png" alt="Ícone de Território">
+                    </div>
+                    <h3>Território</h3>
+                    <p>
+                        O território faz parte da identidade
+                        e da relação da comunidade com seu
+                        ambiente.
+                    </p>
+                </article>
+
+                <!-- Card Comunidade -->
+                <article class="card">
+                    <div class="icone">
+                        <img src="imagens/icone-comunidade.png" alt="Ícone de Comunidade">
+                    </div>
+                    <h3>Comunidade</h3>
+                    <p>
+                        Pessoas e gerações contribuem para
+                        manter vivas as memórias e experiências
+                        da comunidade.
+                    </p>
+                </article>
+
+                <!-- Card Memória -->
+                <article class="card">
+                    <div class="icone">
+                        <img src="imagens/icone-memoria.png" alt="Ícone de Memória">
+                    </div>
+                    <h3>Memória</h3>
+                    <p>
+                        Histórias e conhecimentos são
+                        compartilhados e preservados através
+                        das gerações.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- SEÇÃO GALERIA DE FOTOS -->
+        <section id="galeria" class="secao galeria">
+
+            <div class="titulo-secao">
+                <p>REGISTROS</p>
+                <h2>Galeria</h2>
+                <p>
+                    Registros visuais do território e da
+                    comunidade.
+                </p>
+            </div>
+
+            <!-- Gridzinho usando CSS pra organizar as fotos lado a lado -->
+            <div class="galeria-grid">
+                <div class="foto">
+                    <img src="imagens/galeria-01.jpg" alt="Registro do Quilombo Pacoval">
+                </div>
+                <div class="foto">
+                    <img src="imagens/galeria-02.jpg" alt="Paisagem do Quilombo Pacoval">
+                </div>
+                <div class="foto">
+                    <img src="imagens/galeria-03.jpg" alt="Registro da comunidade">
+                </div>
+                <div class="foto">
+                    <img src="imagens/galeria-004.jpg" alt="Registro cultural do Pacoval">
+                </div>
+                <div class="foto">
+                    <img src="imagens/galeria-05.jpg" alt="Território do Quilombo Pacoval">
+                </div>
+                <div class="foto">
+                    <img src="imagens/galeria-06.jpg" alt="Comunidade do Quilombo Pacoval">
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- SEÇÃO DE INTERAÇÃO (Formulário pro JS brincar e cumprir requisito) -->
+        <section id="interacao" class="secao interacao">
+
+            <div class="titulo-secao">
+                <p>INTERAJA</p>
+                <h2>Conheça o Pacoval</h2>
+                <p>
+                    Digite seu nome para receber uma mensagem
+                    personalizada.
+                </p>
+            </div>
+
+            <!-- Formulário simples pra pegar o input do usuário -->
+            <form id="formulario">
+                <label for="nome">
+                    Qual é o seu nome?
+                </label>
+                <input type="text" id="nome" placeholder="Digite seu nome">
+                <button type="submit">
+                    Conhecer
+                </button>
+            </form>
+
+            <!-- Div vazia onde o JS vai injetar a mensagem de boas-vindas na tela -->
+            <div id="mensagem"></div>
+
+        </section>
+
+
+        <!-- SEÇÃO DE FECHAMENTO -->
+        <section class="frase-final">
+
+            <div>
+                <h2>
+                    Conhecer é também preservar.
+                </h2>
+                <p>
+                    Valorizar a história, a cultura e a memória
+                    das comunidades quilombolas é reconhecer
+                    a importância de suas histórias.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-conteudo">
+            <h3>Quilombo Pacoval</h3>
+            <p>Memória • Cultura • Identidade • Território</p>
+            <p>Landing Page desenvolvida para a disciplina de Programação Web.</p>
+        </div>
+
+        <div class="footer-final">
+            <p>© 2026 - Projeto acadêmico</p>
+        </div>
+
+    </footer>
+
+    <!-- Chamando o script no final pro HTML carregar mais rápido -->
+    <script src="script.js"></script>
+
+</body>
+</html>
