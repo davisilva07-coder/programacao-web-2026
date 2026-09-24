@@ -1,66 +1,47 @@
 /* =========================================================
-   IDENTIDADE VISUAL - QUILOMBO PACOVAL
+   RESET BÁSICO E CONFIGURAÇÕES GERAIS
    ========================================================= */
-
-/* -------------------------
-   VARIÁVEIS DE CORES
-   ------------------------- */
-:root {
-    /* Guardando as cores da paleta aqui pra facilitar na hora de usar no código todo */
-    --amarelo-pacoval: #E6B833;
-    --verde-pacoval: #159447;
-    --vermelho-pacoval: #D92929;
-    --rosa-pacoval: #D84A86;
-    --preto-pacoval: #151515;
-    --branco-pacoval: #FFFFFF;
-    --creme-pacoval: #F7F4E8; /* Cor de fundo principal mais leve que o branco puro */
-    --texto: #222222;
-    
-    /* Padrões de estilo pra reaproveitar */
-    --sombra: 0 8px 25px rgba(0, 0, 0, 0.15);
-    --transicao: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Curva suave pras animações */
-}
-
-/* -------------------------
-   RESET BÁSICO
-   ------------------------- */
 * {
-    /* Zerando as margens que vêm por padrão no navegador pra não bugar o layout */
     margin: 0;
     padding: 0;
-    /* box-sizing border-box pro padding e a borda não aumentarem o tamanho das divs */
     box-sizing: border-box;
 }
 
-/* Rolagem suave quando clica nos links do menu */
 html {
     scroll-behavior: smooth;
 }
 
-/* Estilos base do corpo da página */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--creme-pacoval);
-    color: var(--texto);
+    background-color: #F7F4E8;
+    color: #222222;
     line-height: 1.6;
-    /* Coloquei transition aqui pra mudança de cor pro modo noturno não ser brusca */
-    transition: background-color var(--transicao), color var(--transicao);
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Tirando aquele sublinhado feio dos links */
 a {
     text-decoration: none;
 }
 
-/* Garantindo que as fotos não vazem do contêiner delas */
 img {
     max-width: 100%;
     display: block;
 }
-/* Aplicando a fonte elegante aos títulos e à logo */
-h1, h2, h3, .logo {
-    font-family: "DM Serif Display", serif;
-    font-weight: 400; /* A DM Serif Display fica melhor com esse peso */
+
+/* Garante que a tag figure não adicione margens extra que estraguem o grid */
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para o texto da fonte da imagem */
+.fonte-imagem {
+    display: block;
+    text-align: right;
+    font-size: 0.8rem;
+    color: #555555;
+    margin-top: 5px;
+    font-style: italic;
 }
 
 @font-face {
@@ -71,31 +52,22 @@ h1, h2, h3, .logo {
 
 h1, h2, h3, .logo {
     font-family: 'DM Serif Display', serif;
-}
-/* -------------------------
-   SELEÇÃO DE TEXTO
-   ------------------------- */
-/* Mudando a cor de quando o usuário seleciona um texto na página pra combinar com o tema */
-::selection {
-    background-color: var(--verde-pacoval);
-    color: var(--branco-pacoval);
+    font-weight: 400;
 }
 
 /* =========================================================
-   HEADER (CABEÇALHO)
+   HEADER - CABEÇALHO E NAVEGAÇÃO
    ========================================================= */
-/* Deixando o header fixo no topo acompanhando o scroll da página */
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: var(--preto-pacoval);
-    border-bottom: 3px solid var(--amarelo-pacoval);
+    background-color: #151515;
+    border-bottom: 3px solid #E6B833;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    transition: background-color var(--transicao);
+    transition: background-color 0.4s ease;
 }
 
-/* Estrutura interna da navegação alinhada com flexbox */
 nav {
     position: relative;
     max-width: 1200px;
@@ -108,22 +80,19 @@ nav {
     gap: 20px;
 }
 
-/* Dando um trato na tipografia do logo */
 .logo {
-    color: var(--branco-pacoval);
+    color: #FFFFFF;
     font-size: 1.5rem;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* Dando um destaque só na primeira letra do logo pra dar um charme */
 .logo::first-letter {
-    color: var(--amarelo-pacoval);
+    color: #E6B833;
     font-size: 1.8rem;
 }
 
-/* Deixando os itens do menu lado a lado */
 .menu {
     display: flex;
     align-items: center;
@@ -132,93 +101,55 @@ nav {
 }
 
 .menu a {
-    color: var(--branco-pacoval);
+    color: #FFFFFF;
     font-size: 1rem;
     font-weight: 600;
     padding: 5px 0;
-    transition: var(--transicao);
-    position: relative;
+    transition: 0.4s ease;
 }
 
-/* Essa é a linhazinha que vai aparecer debaixo do link (começa com largura 0) */
-.menu a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 0;
-    height: 2px;
-    background-color: var(--amarelo-pacoval);
-    transition: width 0.3s ease;
-}
-
-/* Muda a cor do link no hover */
 .menu a:hover {
-    color: var(--amarelo-pacoval);
+    color: #E6B833;
 }
 
-/* Faz a linhazinha crescer de 0 pra 100% quando passa o mouse */
-.menu a:hover::after {
-    width: 100%;
-}
-
-/* Estilo pro botão de alternar tema */
 #botaoModo {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 45px;
     height: 45px;
-    border: 2px solid var(--amarelo-pacoval);
+    border: 2px solid #E6B833;
     border-radius: 50%;
     background-color: transparent;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-/* Ajustando o ícone do sol/lua pra caber certinho */
 #botaoModo img {
     width: 24px;
     height: 24px;
     object-fit: contain;
     filter: invert(1);
-    transition: all 0.3s ease;
 }
 
-/* Quando passa o mouse no botão de tema */
 #botaoModo:hover {
-    background-color: var(--amarelo-pacoval);
+    background-color: #E6B833;
     transform: scale(1.1);
-    box-shadow: 0 4px 10px rgba(230, 211, 0, 0.2);
 }
 
-/* Volta a cor do ícone ao normal no hover pra não sumir no fundo amarelo */
 #botaoModo:hover img {
     filter: invert(0);
 }
 
-/* =========================================================
-   FAIXA DE CORES
-   ========================================================= */
-/* Um gradiente simples usando as cores do quilombo pra criar uma barrinha visual */
 .faixa-cores {
     width: 100%;
     height: 7px;
-    background: linear-gradient(
-        90deg,
-        var(--amarelo-pacoval) 0%,
-        var(--amarelo-pacoval) 33%,
-        var(--verde-pacoval) 33%,
-        var(--verde-pacoval) 66%,
-        var(--vermelho-pacoval) 66%,
-        var(--vermelho-pacoval) 100%
-    );
+    background: linear-gradient(90deg, #E6B833 0%, #E6B833 33%, #159447 33%, #159447 66%, #D92929 66%, #D92929 100%);
 }
 
 /* =========================================================
    SEÇÃO INICIAL (HERO)
    ========================================================= */
-/* Grid principal da primeira tela dividindo texto na esquerda e imagem na direita */
 .inicio {
     min-height: 88vh;
     max-width: 1200px;
@@ -230,27 +161,25 @@ nav {
     gap: 60px;
 }
 
-/* Subtítulo chamativo em cima do h1 */
 .pequeno-titulo {
     display: inline-block;
     margin-bottom: 15px;
     padding: 7px 14px;
-    background-color: var(--amarelo-pacoval);
-    color: var(--preto-pacoval);
+    background-color: #E6B833;
+    color: #151515;
     font-size: 0.85rem;
     font-weight: bold;
 }
 
-/* O título grandão responsivo (clamp ajuda muito aqui pra não quebrar no celular) */
 .inicio h1 {
-    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-size: 3rem;
     line-height: 1.1;
-    color: var(--preto-pacoval);
+    color: #151515;
     margin-bottom: 25px;
 }
 
 .inicio h1 span {
-    color: var(--verde-pacoval);
+    color: #159447;
 }
 
 .inicio p {
@@ -260,14 +189,9 @@ nav {
     color: #444444;
 }
 
-/* Moldura da foto principal */
 .inicio-imagem {
-    position: relative;
     overflow: hidden;
-    box-shadow: var(--sombra);
-    
-    /* Chama a animação que eu criei lá no final do CSS */
-    animation: aparecer 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .inicio-imagem img {
@@ -277,74 +201,48 @@ nav {
     transition: transform 0.8s ease;
 }
 
-/* Efeitinho de zoom sutil na foto quando passa o mouse na div */
 .inicio-imagem:hover img {
     transform: scale(1.08);
 }
 
-/* Botão de chamada com aquela animação pulsante infinita */
 #botaoConhecer {
     padding: 14px 25px;
-    border: 2px solid var(--verde-pacoval);
+    border: 2px solid #159447;
     border-radius: 8px;
-    background-color: var(--verde-pacoval);
-    color: var(--branco-pacoval);
+    background-color: #159447;
+    color: #FFFFFF;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
-    animation: pulsar 2.5s infinite;
 }
 
-/* Interrompe a pulsação no hover e aplica o preenchimento amarelo */
 #botaoConhecer:hover {
-    background-color: var(--amarelo-pacoval);
-    border-color: var(--amarelo-pacoval);
-    color: var(--preto-pacoval);
+    background-color: #E6B833;
+    border-color: #E6B833;
+    color: #151515;
     transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(230, 211, 0, 0.4);
-    animation: none;
 }
 
 /* =========================================================
-   ESPAÇAMENTOS GERAIS (SEÇÕES)
+   ESPAÇAMENTOS E SEÇÕES GERAIS
    ========================================================= */
-/* Padrão pra todas as sessões da página respirarem */
 .secao {
     max-width: 1200px;
     margin: 0 auto;
     padding: 90px 30px;
 }
 
-/* Padrão pros cabeçalhos de cada bloco */
 .titulo-secao {
     text-align: center;
     font-size: 2.4rem;
-    color: var(--preto-pacoval);
+    color: #151515;
     margin-bottom: 50px;
-    position: relative;
-}
-
-/* Criando uma linhazinha colorida degradê embaixo de cada título de seção */
-.titulo-secao::after {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 5px;
-    margin: 15px auto 0;
-    border-radius: 5px;
-    background: linear-gradient(
-        90deg,
-        var(--amarelo-pacoval),
-        var(--verde-pacoval),
-        var(--vermelho-pacoval)
-    );
 }
 
 /* =========================================================
    SEÇÃO SOBRE
    ========================================================= */
-/* Mais um grid de duas colunas, igual ao início */
 .sobre-conteudo {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -354,7 +252,7 @@ nav {
 
 .sobre-imagem {
     overflow: hidden;
-    box-shadow: var(--sombra);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .sobre-imagem img {
@@ -369,7 +267,7 @@ nav {
 }
 
 .sobre-texto h3 {
-    color: var(--verde-pacoval);
+    color: #159447;
     font-size: 1.8rem;
     margin-bottom: 15px;
 }
@@ -379,12 +277,11 @@ nav {
     color: #444444;
 }
 
-/* Botão do js que expande o texto */
 #botaoMais {
     margin-top: 10px;
     padding: 12px 20px;
-    background-color: var(--vermelho-pacoval);
-    color: var(--branco-pacoval);
+    background-color: #D92929;
+    color: #FFFFFF;
     border: none;
     border-radius: 7px;
     cursor: pointer;
@@ -393,12 +290,10 @@ nav {
 }
 
 #botaoMais:hover {
-    background-color: var(--rosa-pacoval);
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 5px 15px rgba(216, 74, 134, 0.4);
+    background-color: #D84A86;
+    transform: translateY(-3px);
 }
 
-/* Essa classe é só pro JS usar pra esconder ou mostrar a tag <p> lá no html */
 .oculto {
     display: none;
 }
@@ -406,11 +301,10 @@ nav {
 /* =========================================================
    SEÇÃO HISTÓRIA
    ========================================================= */
-/* Fundo diferentão pra quebrar o ritmo da leitura */
 .historia {
     max-width: none;
-    background-color: var(--preto-pacoval);
-    color: var(--branco-pacoval);
+    background-color: #151515;
+    color: #FFFFFF;
 }
 
 .historia-conteudo {
@@ -424,7 +318,7 @@ nav {
 }
 
 .historia .titulo-secao {
-    color: var(--branco-pacoval);
+    color: #FFFFFF;
 }
 
 .historia-texto p {
@@ -433,14 +327,13 @@ nav {
 }
 
 .historia-texto h3 {
-    color: var(--amarelo-pacoval);
+    color: #E6B833;
     font-size: 1.8rem;
     margin-bottom: 18px;
 }
 
 .historia-imagem {
     overflow: hidden;
-    
 }
 
 .historia-imagem img {
@@ -454,63 +347,17 @@ nav {
     transform: scale(1.05);
 }
 
-/* --- ESTILOS DE TEXTO DA HISTÓRIA --- */
-
-/* Caixinha pra dar um destaque na curiosidade do nome do quilombo */
 .destaque-historia {
     background-color: rgba(230, 211, 0, 0.08);
-    border-left: 4px solid var(--amarelo-pacoval);
+    border-left: 4px solid #E6B833;
     padding: 15px 20px;
     margin: 25px 0;
-    border-radius: 0 8px 8px 0;
     color: #f1f1f1;
-    font-size: 1.05rem;
-    line-height: 1.5;
-}
-
-.destaque-historia strong {
-    color: var(--amarelo-pacoval);
-}
-
-/* Transformando os marcadores padrão da lista em bolinhas vermelhas customizadas */
-.lista-desafios {
-    list-style-type: none;
-    padding-left: 10px;
-    margin: 20px 0 25px 0;
-}
-
-.lista-desafios li {
-    position: relative;
-    padding-left: 28px;
-    margin-bottom: 12px;
-    color: #eeeeee;
-}
-
-.lista-desafios li::before {
-    content: "•";
-    color: var(--vermelho-pacoval);
-    font-size: 1.8rem;
-    position: absolute;
-    left: 0;
-    top: -10px;
-}
-
-.conclusao-historia {
-    font-weight: bold;
-    color: var(--branco-pacoval);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-    margin-top: 25px;
-}
-
-.historia-texto strong {
-    color: var(--branco-pacoval);
 }
 
 /* =========================================================
-   SEÇÃO CULTURA
+   SEÇÃO CULTURA - CARDS
    ========================================================= */
-/* Gridzinho pros 3 cards ficarem alinhados certinhos */
 .cards-cultura {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -518,72 +365,50 @@ nav {
 }
 
 .card {
-    background-color: var(--branco-pacoval);
+    background-color: #FFFFFF;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: var(--sombra);
-    border-top: 6px solid var(--verde-pacoval);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-top: 6px solid #159447;
+    transition: transform 0.4s ease;
 }
 
-/* Colocando uma cor de borda pra cada card pra seguir o layout pedido */
-.card:nth-child(1) { border-top-color: var(--amarelo-pacoval); }
-.card:nth-child(2) { border-top-color: var(--verde-pacoval); }
-.card:nth-child(3) { border-top-color: var(--vermelho-pacoval); }
+.card:nth-child(1) { border-top-color: #E6B833; }
+.card:nth-child(2) { border-top-color: #159447; }
+.card:nth-child(3) { border-top-color: #D92929; }
 
-/* Faz o card subir quando coloca o mouse em cima */
 .card:hover {
     transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
 .card h3 {
-    color: var(--preto-pacoval);
+    color: #151515;
     margin-bottom: 12px;
-    font-size: 1.3rem;
 }
 
 .card p {
     color: #555555;
 }
 
-/* Forçando o ícone a não desalinhar (uso de !important pra garantir a formatação base) */
 .icone {
-    display: block !important;
-    width: 100% !important;
-    margin: 0 0 15px 0 !important;
-    padding: 0 !important;
-    text-align: left !important;
-    transform: none !important;
+    display: block;
+    width: 100%;
+    margin: 0 0 15px 0;
 }
 
 .icone img {
-    width: 55px !important;
-    height: 55px !important;
-    object-fit: contain !important;
-    display: inline-block !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    position: static !important;
-    transform: none !important;
+    width: 55px;
+    height: 55px;
 }
 
 /* =========================================================
    GALERIA DE FOTOS
    ========================================================= */
 .galeria {
-    background-color: var(--branco-pacoval);
+    background-color: #FFFFFF;
     max-width: none;
-    transition: background-color var(--transicao);
 }
 
-.galeria .titulo-secao {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Grid com 3 colunas pras fotos da galeria */
 .galeria-grid {
     max-width: 1200px;
     margin: 0 auto;
@@ -596,8 +421,7 @@ nav {
 .foto {
     overflow: hidden;
     height: 260px;
-    box-shadow: var(--sombra);
-    transition: border-color var(--transicao);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .foto img {
@@ -612,26 +436,20 @@ nav {
 }
 
 /* =========================================================
-   ÁREA DE INTERAÇÃO (FORMULÁRIO)
+   FORMULÁRIO
    ========================================================= */
 .interacao {
     text-align: center;
 }
 
-/* Estilizando a caixinha do formulário */
 #formulario {
     max-width: 600px;
     margin: 0 auto;
     padding: 35px;
-    background-color: var(--branco-pacoval);
+    background-color: #FFFFFF;
     border-radius: 15px;
-    box-shadow: var(--sombra);
-    border: 2px solid var(--amarelo-pacoval);
-    transition: transform 0.3s ease, background-color var(--transicao);
-}
-
-#formulario:hover {
-    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border: 2px solid #E6B833;
 }
 
 #formulario label {
@@ -639,7 +457,7 @@ nav {
     margin-bottom: 10px;
     text-align: left;
     font-weight: bold;
-    color: var(--preto-pacoval);
+    color: #151515;
 }
 
 #nome {
@@ -648,39 +466,30 @@ nav {
     margin-bottom: 18px;
     border: 2px solid #dddddd;
     border-radius: 7px;
-    outline: none;
     font-size: 1rem;
-    transition: all 0.3s ease;
 }
 
-/* Dando um destaque legal na borda quando o usuário clica no input pra digitar */
 #nome:focus {
-    border-color: var(--verde-pacoval);
-    box-shadow: 0 0 0 4px rgba(21, 148, 71, 0.15);
-    transform: translateY(-2px);
+    border-color: #159447;
 }
 
 #formulario button {
     width: 100%;
     padding: 13px;
-    background-color: var(--verde-pacoval);
-    color: var(--branco-pacoval);
+    background-color: #159447;
+    color: #FFFFFF;
     border: none;
     border-radius: 7px;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
 #formulario button:hover {
-    background-color: var(--amarelo-pacoval);
-    color: var(--preto-pacoval);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(230, 211, 0, 0.3);
+    background-color: #E6B833;
+    color: #151515;
 }
 
-/* Espaço reservado pra mensagem que o JS vai cuspir na tela */
 #mensagem {
     margin-top: 20px;
     font-weight: bold;
@@ -688,39 +497,20 @@ nav {
 }
 
 /* =========================================================
-   FRASE DE FECHAMENTO
+   RODAPÉ E FECHAMENTO
    ========================================================= */
 .frase-final {
     padding: 80px 30px;
     text-align: center;
-    background: linear-gradient(
-        135deg,
-        var(--verde-pacoval),
-        #0d6d35
-    );
-    color: var(--branco-pacoval);
-    border-top: 8px solid var(--amarelo-pacoval);
+    background: linear-gradient(135deg, #159447, #0d6d35);
+    color: #FFFFFF;
+    border-top: 8px solid #E6B833;
 }
 
-.frase-final h2 {
-    max-width: 850px;
-    margin: 0 auto 15px;
-    font-size: 2.3rem;
-}
-
-.frase-final p {
-    max-width: 750px;
-    margin: 0 auto;
-    color: #eeeeee;
-}
-
-/* =========================================================
-   FOOTER (RODAPÉ)
-   ========================================================= */
 footer {
-    background-color: var(--preto-pacoval);
-    color: var(--branco-pacoval);
-    border-top: 5px solid var(--vermelho-pacoval);
+    background-color: #151515;
+    color: #FFFFFF;
+    border-top: 5px solid #D92929;
 }
 
 .footer-conteudo {
@@ -730,187 +520,66 @@ footer {
     text-align: center;
 }
 
-.footer-conteudo p {
-    color: #dddddd;
-    margin-bottom: 10px;
-}
-
-.footer-final {
-    padding-top: 20px;
-    border-top: 1px solid #444444;
-    color: #aaaaaa;
-    font-size: 0.9rem;
-}
-
 /* =========================================================
-   MODO NOTURNO (CONTROLADO PELO JAVASCRIPT)
+   MODO NOTURNO
    ========================================================= */
-/* Aqui é onde a mágica do botão acontece: mudamos o fundo principal pra preto */
 body.modo-noturno {
     background-color: #101010;
     color: #eeeeee;
 }
 
-/* Sobrescrevendo a cor dos títulos pra não ficarem pretos no fundo preto */
 body.modo-noturno .titulo-secao,
 body.modo-noturno .inicio h1,
 body.modo-noturno .card h3,
 body.modo-noturno #formulario label {
-    color: var(--branco-pacoval);
+    color: #FFFFFF;
 }
 
-/* Ajustando as cores de texto secundárias */
 body.modo-noturno .inicio p,
 body.modo-noturno .sobre-texto p,
 body.modo-noturno .card p {
     color: #dddddd;
 }
 
-/* Escurecendo o fundo dos cards e do formulário */
 body.modo-noturno .card,
 body.modo-noturno #formulario {
     background-color: #1d1d1d;
     border-color: #333;
 }
 
-/* Invertendo os ícones (que eram pretos) pra brancos usando o filter, assim eles não somem no modo escuro */
 body.modo-noturno .icone img {
     filter: brightness(0) invert(1);
 }
 
-/* Dando um trato no input do formulário no modo noturno */
 body.modo-noturno #nome {
     background-color: #252525;
-    color: var(--branco-pacoval);
+    color: #FFFFFF;
     border-color: #555555;
 }
 
-/* Tirando aquele fundo branco da galeria */
 body.modo-noturno .galeria {
     background-color: transparent;
 }
 
-/* Escurecendo as bordinhas das fotos */
-body.modo-noturno .foto {
-    border-color: #1d1d1d;
+/* Regra para o texto da fonte não desaparecer no Modo Noturno */
+body.modo-noturno .fonte-imagem {
+    color: #aaaaaa;
 }
 
 /* =========================================================
-   ANIMAÇÕES KEYFRAMES
+   RESPONSIVIDADE - MEDIA QUERIES
    ========================================================= */
-/* Keyframes pra fazer os elementos subirem e aparecerem de leve no carregamento */
-@keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Animação que cria aquela 'sombra viva' em volta do botão principal */
-@keyframes pulsar {
-    0% {
-        box-shadow: 0 0 0 0 rgba(21, 148, 71, 0.4);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(21, 148, 71, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(21, 148, 71, 0);
-    }
-}
-
-.inicio-texto {
-    animation: aparecer 1s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* =========================================================
-   RESPONSIVIDADE (MEDIA QUERIES)
-   ========================================================= */
-/* Ajustes pras telas menores (tablets).
-   Quando a tela for menor que 950px, eu quebro as colunas dos grids
-   pra não esmagar o conteúdo e deixo tudo em 1 coluna só nas sessões principais.
-*/
 @media (max-width: 950px) {
     .menu { gap: 12px; }
-    .inicio {
-        grid-template-columns: 1fr;
-        padding-top: 50px;
-    }
-    .inicio-imagem img { height: 400px; }
+    .inicio { grid-template-columns: 1fr; padding-top: 50px; }
     .sobre-conteudo, .historia-conteudo { grid-template-columns: 1fr; }
     .cards-cultura, .galeria-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Ajustes pra celulares.
-   Aqui o bagulho é mais apertado, então diminuo bastante os paddings, 
-   o tamanho das fontes e mudo o menu e logo pro layout não estourar na horizontal.
-*/
 @media (max-width: 650px) {
-    nav {
-        flex-direction: column;
-        padding: 15px 20px;
-        align-items: flex-start;
-    }
-
-    .logo {
-        font-size: 1.25rem;
-        max-width: calc(100% - 55px);
-        padding-right: 10px;
-        line-height: 1.2;
-    }
-
-    .logo::first-letter {
-        font-size: 1.5rem;
-    }
-
-    .menu {
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-        margin-top: 10px;
-    }
-
-    /* Prende o botão do modo escuro no cantinho da tela pra não misturar com os menus */
-    #botaoModo {
-        position: absolute;
-        top: 12px;
-        right: 15px;
-        width: 40px;
-        height: 40px;
-    }
-
-    #botaoModo img {
-        width: 20px;
-        height: 20px;
-    }
-
-    .secao { padding: 65px 20px; }
-    .titulo-secao { font-size: 2rem; }
-    .inicio h1 { font-size: 3rem; }
-    .inicio-imagem img, .sobre-imagem img, .historia-imagem img { height: 300px; }
-    
-    /* A galeria e os cards ficam de uma vez com 1 coluna só */
-    .cards-cultura, .galeria-grid {
-        grid-template-columns: 1fr;
-        padding: 0 20px;
-    }
-    #formulario { padding: 25px 20px; }
-    .frase-final h2 { font-size: 1.8rem; }
-}
-
-/* =========================================================
-   ACESSIBILIDADE
-   ========================================================= */
-/* Caso o usuário tenha ativado "redução de movimento" no sistema dele, a gente desliga as animações aqui */
-@media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after {
-        transition: none !important;
-        animation: none !important;
-    }
+    nav { flex-direction: column; align-items: flex-start; }
+    .menu { width: 100%; justify-content: center; }
+    #botaoModo { position: absolute; top: 12px; right: 15px; }
+    .inicio h1 { font-size: 2.2rem; }
+    .cards-cultura, .galeria-grid { grid-template-columns: 1fr; }
 }
