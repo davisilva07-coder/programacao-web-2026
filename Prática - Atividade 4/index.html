@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Catálogo de Peças de Moto</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Cadastro de Peças</h1>
+
+    <!-- Formulário para criar o registro -->
+    <form id="formCadastro">
+
+        <input
+            type="text"
+            id="nomePeca"
+            placeholder="Nome da peça"
+            required
+        >
+
+        <input
+            type="number"
+            id="quantidade"
+            placeholder="Quantidade"
+            min="1"
+            required
+        >
+
+        <input
+            type="number"
+            id="preco"
+            placeholder="Preço (R$)"
+            step="0.01"
+            min="0"
+            required
+        >
+
+        <button type="submit">Guardar Peça</button>
+
+    </form>
+
+    <!-- Botão para limpar os registros -->
+    <button id="btnLimpar" class="btn-limpar">
+        Limpar Catálogo
+    </button>
+
+    <h2>Catálogo em Estoque</h2>
+
+    <ul id="listaPecas"></ul>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

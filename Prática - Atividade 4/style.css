@@ -1,0 +1,122 @@
+/* style.css */
+
+/* Definição de variáveis para facilitar a mudança de cores */
+:root {
+    --cor-fundo: #f4f7f6;
+    --cor-primaria: #2c3e50; /* Azul escuro profissional */
+    --cor-destaque: #e74c3c; /* Vermelho para ações destrutivas */
+    --cor-texto: #333;
+    --cor-branco: #fff;
+    --raio-borda: 8px;
+}
+
+/* Reset básico de margens e padding */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+h1, h2 {
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo do Formulário */
+#formCadastro {
+    background-color: var(--cor-branco);
+    padding: 25px;
+    border-radius: var(--raio-borda);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: var(--cor-primaria);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(44, 62, 80, 0.2);
+}
+
+/* Estilo dos Botões */
+button {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button:hover {
+    background-color: #1a252f;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.btn-limpar {
+    background-color: var(--cor-destaque);
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.btn-limpar:hover {
+    background-color: #c0392b;
+}
+
+/* Estilo do Catálogo (Lista) */
+#listaPecas {
+    list-style-type: none;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Transformando cada item da lista em um pequeno "card" */
+#listaPecas li {
+    background-color: var(--cor-branco);
+    padding: 15px 20px;
+    border-radius: var(--raio-borda);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid var(--cor-primaria);
+    font-weight: 500;
+    transition: transform 0.2s;
+}
+
+#listaPecas li:hover {
+    transform: translateX(5px);
+}
